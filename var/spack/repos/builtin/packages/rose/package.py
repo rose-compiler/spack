@@ -16,8 +16,8 @@ class Rose(AutotoolsPackage):
        (Developed at Lawrence Livermore National Lab)"""
 
     homepage = "http://rosecompiler.org/"
-    url = "https://github.com/rose-compiler/rose-develop/archive/v0.9.10.0.zip"
-    git = "https://github.com/rose-compiler/rose-develop.git"
+    url = "https://github.com/rose-compiler/rose/archive/v0.9.10.0.zip"
+    git = "https://github.com/rose-compiler/rose.git"
 
     # --------------------------------------------------------------------------
     # ROSE Versions
@@ -26,7 +26,7 @@ class Rose(AutotoolsPackage):
 
     # git versions
     version("0.9.9.52", commit="bd4fc0cc332ce62d9fa54db19879507d9e4f239b")
-    version("develop", branch="master")
+    version("develop", branch="develop")
 
     # --------------------------------------------------------------------------
     # Dependencies
@@ -68,7 +68,7 @@ class Rose(AutotoolsPackage):
     variant("cxx", default=True, description="Enable c++ language support")
 
     # Use spack install cxxflags=-std=c++11
-    variant("cxx11", default=False, description="Enable c++11 language support")
+    variant("cxx11", default=True, description="Enable c++11 language support")
 
     variant("fortran", default=False, description="Enable fortran language support")
 
