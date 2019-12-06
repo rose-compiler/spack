@@ -121,6 +121,9 @@ class Rose(AutotoolsPackage):
             elif "@0.9.10.0:" in spec:
                 # EDG: f4624773cb93dfcc67a00efb5e9e8affeb57fb73
                 f.write("277fea7e1e5305e5b3c86b550a0c1354e8285b96 1523991417")
+            elif "@0.9.12.0:" in spec:
+                # EDG: dae6768b9bac42668c27b41a3694ec9bb3b7ead6 
+                f.write("85d9e74817e36b344aab6b2556957e63c32bee4a 1572241620")
             else:
                 raise InstallError("Unknown ROSE version!")
 
@@ -160,7 +163,9 @@ class Rose(AutotoolsPackage):
             cc = spack_cc
             cxx = spack_cxx
 
-        if spec.satisfies("@0.9.8:"):
+        if spec.satisfies("@0.9.12:"):
+            edg = "5.0"
+        elif spec.satisfies("@0.9.8:":
             edg = "4.12"
         else:
             edg = "4.9"
@@ -235,6 +240,8 @@ class Rose(AutotoolsPackage):
                     f.write("8e63f421f9107ef6c7882b57f9c83e3878623ffa")
                 elif "@0.9.10.0" in spec:
                     f.write("f4624773cb93dfcc67a00efb5e9e8affeb57fb73")
+                elif "@0.9.12.0" in spec:
+                    f.write("dae6768b9bac42668c27b41a3694ec9bb3b7ead6")
                 else:
                     raise InstallError("Unknown ROSE version for EDG!")
 
